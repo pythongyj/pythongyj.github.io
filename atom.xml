@@ -48,6 +48,34 @@
   </entry>
   
   <entry>
+    <title>发布博客练习</title>
+    <link href="http://geyunjie.com/2023/03/21/iconfont/"/>
+    <id>http://geyunjie.com/2023/03/21/iconfont/</id>
+    <published>2023-03-20T16:00:00.000Z</published>
+    <updated>2020-01-14T03:54:55.799Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="elementUI字体图标不显示-完美解决方案"><a href="#elementUI字体图标不显示-完美解决方案" class="headerlink" title="elementUI字体图标不显示 完美解决方案"></a>elementUI字体图标不显示 完美解决方案</h2><p>使用vue init webpack-simple   xxx 创建的项目</p><p>在使用ElementUI的时候使用 <strong>字体图标</strong>时提示 </p><p><img src="/.com//%E6%B2%A1%E6%9C%89loader%E5%A4%84%E7%90%86%E5%9B%BE%E6%A0%87.png" alt></p><p>根据报错提示可以看出时无法处理element-icons.ttf文件</p><p>原因时什么呢？</p><p>相信大家都能够知道，这是因为webpack不知道怎么去处理.ttf的文件</p><p>这个时候我们就需要url-loader来帮助我们处理.ttf字体文件</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//这个时候需要我们去执行npm命令去下载url-loader</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">npm/cnpm install url-loader --save</span></pre></td></tr></table></figure><p>下载完成后  去过你尝试去npm run dev 你会发现还是报和上面相同的错误，这是为什么呢？</p><p>答案当然是因为你没有使用这个加载器（url-loader）</p><p>现在就需要你在<strong><code>webpack.config.js</code></strong>中去配置</p><p>这个配置说句实在的让小编好为难，因为一开始的时候咱也不知道该怎么配置啊，怎么办呢？</p><p>这个时候度娘就显现出来了强大的威力，我开始了百度，看到别人的博客，知道了在<strong><code>rules</code></strong>下配置如下信息</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">     test: <span class="regexp">/\.(woff2?|eot|ttf|otf)(\?.*)?$/</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        loader: <span class="string">'url-loader'</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure><p> 别急着运行你的项目———这里有坑</p><p>看图</p><p>此图  是配置信息</p><p><img src="/.com//url-loader-%E9%85%8D%E7%BD%AE%E4%B8%8D%E5%8F%AF%E4%BB%A5.png" alt></p><p>此图是运行结果</p><p><img src="/.com//url-loader-%E5%8A%A0%E8%BD%BD%E4%B8%8D%E5%88%B0.png" alt></p><p>此时你会发现  不报错了  但是我的图标去哪了？</p><p>当时的小编也不知道啊    可能是被外星人给叼走了</p><p>哈哈   开个玩笑</p><p>经过小编的不懈努力  至于找到了问题的所在</p><p>这个因为没有设置<strong><code>limit</code></strong>选项</p><p>你可能会问这是什么东东</p><p>别急   先来和小编一起看看文档</p><p><img src="/.com//%E6%96%87%E6%A1%A3.png" alt></p><p>看图可以看出  是要设置文件的大小的  这个属性的默认值是undefined</p><p>当然    小编怕你有疑问  再给你贴出一副图</p><p><img src="/.com//unde.png" alt></p><p>这上面详细写了各个选项的具体功能</p><p>此时的你  应该已经很明确了问题原因的所在 和解决的办法</p><p>此时  就来看看我们伟大的成就吧</p><p>看图   配置</p><p><img src="/.com//url-loader-%E8%A7%A3%E5%86%B3.png" alt></p><p>再来看运行的结果   如图：</p><p><img src="/.com//url-loader-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3.png" alt></p><p>此时，问题就完美解决了</p><p>如果能够帮助到你，是小编最大的荣幸</p><p>当然   就 不好的地方  情大家帮忙指出   学习永无止境    </p><p>小编一直认为  人外有人  天外有天    一起学习   共同进步</p><p>让我们共同加油吧！！！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;elementUI字体图标不显示-完美解决方案&quot;&gt;&lt;a href=&quot;#elementUI字体图标不显示-完美解决方案&quot; class=&quot;headerlink&quot; title=&quot;elementUI字体图标不显示 完美解决方案&quot;&gt;&lt;/a&gt;elementUI字体图标不显示 
+      
+    
+    </summary>
+    
+    
+      <category term="aaa" scheme="http://geyunjie.com/categories/aaa/"/>
+    
+    
+      <category term="javascript" scheme="http://geyunjie.com/tags/javascript/"/>
+    
+      <category term="iconfont" scheme="http://geyunjie.com/tags/iconfont/"/>
+    
+  </entry>
+  
+  <entry>
     <title>BlueLake博客主题的详细配置</title>
     <link href="http://geyunjie.com/2019/12/20/hello-world/"/>
     <id>http://geyunjie.com/2019/12/20/hello-world/</id>
