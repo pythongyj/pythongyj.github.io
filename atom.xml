@@ -77,6 +77,35 @@
   </entry>
   
   <entry>
+    <title>获取url的各个参数的值</title>
+    <link href="http://www.qcwy.org.cn/2018/05/12/qureyUrlParams/"/>
+    <id>http://www.qcwy.org.cn/2018/05/12/qureyUrlParams/</id>
+    <published>2018-05-12T03:33:07.000Z</published>
+    <updated>2020-01-17T03:25:26.338Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><blockquote><ol><li>定义一个url地址（就是确定要 解析的url地址）</li><li>定义一个方法用来解析参数</li><li>方法：先创建一个对象，用于存放参数的键值对</li><li>方法：先判断传入的参数是否为空   为空  直接返回一个空对象，不为空  进行解析</li><li>方法：使用split方法把  ？  符号之前的数据剔除</li><li>方法：使用split方法把数据以  &amp;  作为切割点  切割成数组</li><li>方法：使用forEach对切割好的数组进行遍历</li><li>方法：再次使用split方法 把遍历的每一项 以  =  进行分割   分割成的数组的第一项作为 key 属性  第二项作为  value  属性  存放到之前定义好的 空对象中</li><li>方法：返回这个对象</li></ol></blockquote><h3 id="具体实现代码"><a href="#具体实现代码" class="headerlink" title="具体实现代码"></a>具体实现代码</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个需要传递的URL</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">const</span> url = <span class="string">'https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=1&amp;tn=baidu'</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  <span class="comment">/*</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">   * str =&gt;需要解析的url</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="comment">   * 返回的是一个解析好的对象</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment">   * &#123;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment">    f: "8"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="comment">    ie: "utf-8"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="comment">    rsv_bp: "1"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="comment">    tn: "baidu"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="comment">   &#125;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="comment">   */</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">const</span> qureyUrlParams = <span class="function"><span class="keyword">function</span> (<span class="params">str</span>) </span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">const</span> objStr = &#123;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    str &amp;&amp; str.split(<span class="string">'?'</span>)[<span class="number">1</span>].split(<span class="string">'&amp;'</span>).forEach(<span class="function"><span class="params">item</span> =&gt;</span> objStr[item.split(<span class="string">'='</span>)[<span class="number">0</span>]] = item.split(<span class="string">'='</span>)[<span class="number">1</span>]);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> objStr</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">  <span class="built_in">console</span>.log(qureyUrlParams(url));</span></pre></td></tr></table></figure><p>相信  以上面写的思路，大家都能看的非常明白</p><p>但是：小编觉得这不是最好的解决方案，最好的解决方案是用正则表达式来进行解析。</p><p>正则表达式   的解决方案   详见   小编的  正则表达式   里面的案例</p><p>如果能够帮助到你，是小编最大的荣幸</p><p>当然   有 不好的地方  请大家帮忙指出   学习永无止境    </p><p>小编一直认为  人外有人  天外有天    一起学习   共同进步</p><p>让我们共同加油吧！！！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h3&gt;&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;定义一个url地址（就是确定要 解析的url地址）&lt;/li&gt;
+&lt;li&gt;定义一个方法用来解析参数&lt;/li
+      
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="http://www.qcwy.org.cn/categories/javascript/"/>
+    
+    
+      <category term="javascript" scheme="http://www.qcwy.org.cn/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>前端规范</title>
     <link href="http://www.qcwy.org.cn/2018/04/15/norm/"/>
     <id>http://www.qcwy.org.cn/2018/04/15/norm/</id>
