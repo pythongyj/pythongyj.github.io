@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.blog.geyunjie.com/"/>
-  <updated>2020-01-15T06:55:29.048Z</updated>
+  <updated>2020-05-31T06:17:54.950Z</updated>
   <id>http://www.blog.geyunjie.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue-proxy</title>
+    <link href="http://www.blog.geyunjie.com/2020/05/12/vue-proxy/"/>
+    <id>http://www.blog.geyunjie.com/2020/05/12/vue-proxy/</id>
+    <published>2020-05-12T13:43:10.000Z</published>
+    <updated>2020-05-31T06:17:54.950Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前端工程化开发时的跨域解决方案"><a href="#前端工程化开发时的跨域解决方案" class="headerlink" title="前端工程化开发时的跨域解决方案"></a>前端工程化开发时的跨域解决方案</h2><blockquote><p>此方案只能用于开发环境，线上最好设置同源策略</p></blockquote><h3 id="1-场景"><a href="#1-场景" class="headerlink" title="1. 场景"></a>1. 场景</h3><p>前后端分离的项目</p><p>前后端不在同一服务器的情况下，前端要访问后端API，可通过在vue.config.js中配置代理服务器</p><h3 id="2-配置"><a href="#2-配置" class="headerlink" title="2. 配置"></a>2. 配置</h3><h4 id="2-1-前提条件"><a href="#2-1-前提条件" class="headerlink" title="2.1 前提条件"></a>2.1 前提条件</h4><p>1：安装<strong>vue-lic</strong></p><p>2：安装<strong>axios</strong>  用于发送请求</p><h4 id="2-2-配置axios"><a href="#2-2-配置axios" class="headerlink" title="2.2 配置axios"></a>2.2 配置axios</h4><p>详细配置 请查看axios </p><h4 id="2-3-开始发送请求"><a href="#2-3-开始发送请求" class="headerlink" title="2.3 开始发送请求"></a>2.3 开始发送请求</h4><p>此时控制台会报跨域错误 ， 这个时候  就需要设置跨域了，或者后台配置允许跨域（一般都不这么干）</p><h4 id="2-4-前端配置跨域"><a href="#2-4-前端配置跨域" class="headerlink" title="2.4 前端配置跨域"></a>2.4 前端配置跨域</h4><blockquote><ol><li>先在根目录创建vue.config.js</li><li>写入以下代码</li></ol><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">  <span class="comment">//vue-cli3.0 里面的 vue.config.js做配置</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">devServer: &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    proxy: &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        <span class="string">'/api'</span>: &#123;     <span class="comment">//这里最好有一个 /</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">            target: <span class="string">'http://xx.xx.xx.xx:8080'</span>,  <span class="comment">// 后台接口域名</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">            ws: <span class="literal">true</span>,        <span class="comment">//如果要代理 websockets，配置这个参数</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">            secure: <span class="literal">false</span>,  <span class="comment">// 如果是https接口，需要配置这个参数</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">            changeOrigin: <span class="literal">true</span>,  <span class="comment">//是否跨域</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">            pathRewrite:&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">                <span class="string">'^/api'</span>:<span class="string">''</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">            &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr></table></figure><ol start="3"><li>axios 中配置的 根路径（baseURL）需要设置你要代理的路径 ，此时，就会把这个路径代理到后台接口的域名下</li></ol></blockquote><p>注意：部分文章可能会在不就的将来更新</p><p>如果能够帮助到你，是小编最大的荣幸</p><p>当然   有 不好的地方  请大家帮忙指出   学习永无止境    </p><p>小编一直认为  人外有人  天外有天    一起学习   共同进步</p><p>让我们共同加油吧！！！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前端工程化开发时的跨域解决方案&quot;&gt;&lt;a href=&quot;#前端工程化开发时的跨域解决方案&quot; class=&quot;headerlink&quot; title=&quot;前端工程化开发时的跨域解决方案&quot;&gt;&lt;/a&gt;前端工程化开发时的跨域解决方案&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;此方案只能
+      
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="http://www.blog.geyunjie.com/categories/vue/"/>
+    
+    
+      <category term="proxy" scheme="http://www.blog.geyunjie.com/tags/proxy/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue字体图标不显示的设置</title>
@@ -300,30 +327,11 @@
   </entry>
   
   <entry>
-    <title>css三大特性</title>
-    <link href="http://www.blog.geyunjie.com/2017/09/12/css-properties/"/>
-    <id>http://www.blog.geyunjie.com/2017/09/12/css-properties/</id>
-    <published>2017-09-12T13:33:07.000Z</published>
-    <updated>2020-03-01T09:06:24.235Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-      <category term="css" scheme="http://www.blog.geyunjie.com/categories/css/"/>
-    
-    
-      <category term="css" scheme="http://www.blog.geyunjie.com/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
     <title>设置cookie</title>
-    <link href="http://www.blog.geyunjie.com/2017/09/12/set-cookie/"/>
-    <id>http://www.blog.geyunjie.com/2017/09/12/set-cookie/</id>
-    <published>2017-09-12T13:33:07.000Z</published>
-    <updated>2020-05-31T05:46:18.934Z</updated>
+    <link href="http://www.blog.geyunjie.com/2017/11/12/set-cookie/"/>
+    <id>http://www.blog.geyunjie.com/2017/11/12/set-cookie/</id>
+    <published>2017-11-12T13:23:17.000Z</published>
+    <updated>2020-05-31T05:55:15.755Z</updated>
     
     <content type="html"><![CDATA[<h2 id="通过js设置cookie的方法"><a href="#通过js设置cookie的方法" class="headerlink" title="通过js设置cookie的方法"></a>通过js设置cookie的方法</h2><p>我们在前端开发中，通常都需要获取并记录用户的某些操作设置，这样可以使用户下一次访问网站时不用进行重复的调整设置同一个功能。</p><p>此次文章中的方法是在前端开发工作中自己随手写的一组通过js设置与获取cookie的方法，能够应用在多说情况下，没做细挖与深究</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cookie = &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>:function(key,val,time)&#123;<span class="comment">//设置cookie方法</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> date=<span class="keyword">new</span> <span class="built_in">Date</span>(); <span class="comment">//获取当前时间</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> expiresDays=time;  <span class="comment">//将date设置为n天以后的时间</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">date.setTime(date.getTime()+expiresDays*<span class="number">24</span>*<span class="number">3600</span>*<span class="number">1000</span>); <span class="comment">//格式化为cookie识别的时间</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.cookie=key + <span class="string">"="</span> + val +<span class="string">";expires="</span>+date.toGMTString();  <span class="comment">//设置cookie</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">get</span>:function(key)&#123;<span class="comment">//获取cookie方法</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="comment">/*获取cookie参数*/</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> getCookie = <span class="built_in">document</span>.cookie.replace(<span class="regexp">/[ ]/g</span>,<span class="string">""</span>);  <span class="comment">//获取cookie，并且将获得的cookie格式化，去掉空格字符</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arrCookie = getCookie.split(<span class="string">";"</span>)  <span class="comment">//将获得的cookie以"分号"为标识 将cookie保存到arrCookie的数组中</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> tips;  <span class="comment">//声明变量tips</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arrCookie.length;i++)&#123;   <span class="comment">//使用for循环查找cookie中的tips变量</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr=arrCookie[i].split(<span class="string">"="</span>);   <span class="comment">//将单条cookie用"等号"为标识，将单条cookie保存为arr数组</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(key==arr[<span class="number">0</span>])&#123;  <span class="comment">//匹配变量名称，其中arr[0]是指的cookie名称，如果该条变量为tips则执行判断语句中的赋值操作</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">tips=arr[<span class="number">1</span>];   <span class="comment">//将cookie的值赋给变量tips</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">break</span>;   <span class="comment">//终止for循环遍历</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">&#125; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> tips;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure><p>下面简单的说明一下设置与获取的方法，便于前端开发新手用户使用</p><blockquote><p>设置cookie的方法为：cookie.set(key,val,time)</p><ol><li>key可以理解为cookie的变量名</li><li>val可以理解为这个cookie所带有的值</li><li>time是cookie的超时时间，单位为天</li></ol><p>获取cookie的方法为：cookie.get(key)</p><ol><li>key就是刚才我们设置时的cookie变量名</li><li>我们只需要将函数赋值给新的变量即可调用这个值，例如：var n = cookie.get(key);</li><li>方法写的不算复杂，比较适合前端开发新手使用</li></ol></blockquote><p>如果能够帮助到你，是小编最大的荣幸</p><p>当然   有 不好的地方  请大家帮忙指出   学习永无止境    </p><p>小编一直认为  人外有人  天外有天    一起学习   共同进步</p><p>让我们共同加油吧！！</p>]]></content>
     
@@ -341,6 +349,25 @@
     
     
       <category term="cookie" scheme="http://www.blog.geyunjie.com/tags/cookie/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css三大特性</title>
+    <link href="http://www.blog.geyunjie.com/2017/09/12/css-properties/"/>
+    <id>http://www.blog.geyunjie.com/2017/09/12/css-properties/</id>
+    <published>2017-09-12T13:33:07.000Z</published>
+    <updated>2020-03-01T09:06:24.235Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="css" scheme="http://www.blog.geyunjie.com/categories/css/"/>
+    
+    
+      <category term="css" scheme="http://www.blog.geyunjie.com/tags/css/"/>
     
   </entry>
   
