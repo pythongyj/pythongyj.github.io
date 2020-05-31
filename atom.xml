@@ -159,6 +159,33 @@
   </entry>
   
   <entry>
+    <title>微信小程序登录验证</title>
+    <link href="http://www.blog.geyunjie.com/2018/04/15/login-wx/"/>
+    <id>http://www.blog.geyunjie.com/2018/04/15/login-wx/</id>
+    <published>2018-04-15T00:54:07.000Z</published>
+    <updated>2020-02-26T15:26:54.439Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p>在说怎么做之前，先看下这个流程图</p><p><img src="./%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81%E6%B5%81%E7%A8%8B.png" alt=""></p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>看完这个流程图 ，相必大家已经很清楚了。</p><p>为了防止大家不太明白，再次给大家聊一下流程图</p><ol><li>在授权之前，应该选判断是否已经授权。因为在别的地方已经授权了<ul><li>已授权：直接跳过授权的过程，进行本该进行的操作</li><li>未授权：进如以下流程进行授权</li></ul></li><li>获取用户信息。<ul><li>由于用户信息是隐私为题，需要征求用户的同意。所以，把这一步放到第二步，而不是第三步。</li><li>用户同意获取用户信息：获取用户系信息</li><li>用户不同意获取用户信息：终止以下操作，返回最开始授权之前的页面</li></ul></li><li>使用微信提供的API接口wx.login()，请求微信的服务器，获取code<ul><li>成功：返回code</li><li>失败：返回错误信息</li></ul></li><li>使用获取到的<strong>用户信息+code</strong>向公司的服务器发起获取<strong>Token</strong>的  接口  请求。服务器根据传递的数据进行判断<ul><li>请求成功：返回<strong>token</strong> 和请求成功的  状态信息等</li><li>请求失败：返回失败的  错误信息  比如：code不一致等（后端程序员编写具体的接口返回内容）</li></ul></li><li>当请求成功后，进行<strong>本地存储</strong>  ，并开始授权之前的操作<ul><li>使用微信小程序提供的API接口，进行本地存储</li><li>以后再有地方需要token的地方，就会直接从本地获取Token，而无需再次进行用户授权</li></ul></li></ol><p>   注意：部分文章可能会在不就的将来更新</p><p>  如果能够帮助到你，是小编最大的荣幸</p><p>  当然   有 不好的地方  请大家帮忙指出   学习永无止境    </p><p>  小编一直认为  人外有人  天外有天    一起学习   共同进步</p><p>  让我们共同加油吧！！！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;流程图&quot;&gt;&lt;a href=&quot;#流程图&quot; class=&quot;headerlink&quot; title=&quot;流程图&quot;&gt;&lt;/a&gt;流程图&lt;/h2&gt;&lt;p&gt;在说怎么做之前，先看下这个流程图&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7
+      
+    
+    </summary>
+    
+    
+      <category term="小程序" scheme="http://www.blog.geyunjie.com/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+      <category term="小程序" scheme="http://www.blog.geyunjie.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>前端规范</title>
     <link href="http://www.blog.geyunjie.com/2018/04/15/norm/"/>
     <id>http://www.blog.geyunjie.com/2018/04/15/norm/</id>
@@ -185,33 +212,6 @@
     
     
       <category term="javascript" scheme="http://www.blog.geyunjie.com/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>微信小程序登录验证</title>
-    <link href="http://www.blog.geyunjie.com/2018/04/15/login-wx/"/>
-    <id>http://www.blog.geyunjie.com/2018/04/15/login-wx/</id>
-    <published>2018-04-15T00:54:07.000Z</published>
-    <updated>2020-02-26T15:26:54.439Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p>在说怎么做之前，先看下这个流程图</p><p><img src="./%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81%E6%B5%81%E7%A8%8B.png" alt=""></p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>看完这个流程图 ，相必大家已经很清楚了。</p><p>为了防止大家不太明白，再次给大家聊一下流程图</p><ol><li>在授权之前，应该选判断是否已经授权。因为在别的地方已经授权了<ul><li>已授权：直接跳过授权的过程，进行本该进行的操作</li><li>未授权：进如以下流程进行授权</li></ul></li><li>获取用户信息。<ul><li>由于用户信息是隐私为题，需要征求用户的同意。所以，把这一步放到第二步，而不是第三步。</li><li>用户同意获取用户信息：获取用户系信息</li><li>用户不同意获取用户信息：终止以下操作，返回最开始授权之前的页面</li></ul></li><li>使用微信提供的API接口wx.login()，请求微信的服务器，获取code<ul><li>成功：返回code</li><li>失败：返回错误信息</li></ul></li><li>使用获取到的<strong>用户信息+code</strong>向公司的服务器发起获取<strong>Token</strong>的  接口  请求。服务器根据传递的数据进行判断<ul><li>请求成功：返回<strong>token</strong> 和请求成功的  状态信息等</li><li>请求失败：返回失败的  错误信息  比如：code不一致等（后端程序员编写具体的接口返回内容）</li></ul></li><li>当请求成功后，进行<strong>本地存储</strong>  ，并开始授权之前的操作<ul><li>使用微信小程序提供的API接口，进行本地存储</li><li>以后再有地方需要token的地方，就会直接从本地获取Token，而无需再次进行用户授权</li></ul></li></ol><p>   注意：部分文章可能会在不就的将来更新</p><p>  如果能够帮助到你，是小编最大的荣幸</p><p>  当然   有 不好的地方  请大家帮忙指出   学习永无止境    </p><p>  小编一直认为  人外有人  天外有天    一起学习   共同进步</p><p>  让我们共同加油吧！！！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;流程图&quot;&gt;&lt;a href=&quot;#流程图&quot; class=&quot;headerlink&quot; title=&quot;流程图&quot;&gt;&lt;/a&gt;流程图&lt;/h2&gt;&lt;p&gt;在说怎么做之前，先看下这个流程图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7
-      
-    
-    </summary>
-    
-    
-      <category term="小程序" scheme="http://www.blog.geyunjie.com/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    
-      <category term="小程序" scheme="http://www.blog.geyunjie.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
@@ -319,28 +319,28 @@
   </entry>
   
   <entry>
-    <title>JavaScript原型</title>
-    <link href="http://www.blog.geyunjie.com/2017/09/12/prototype/"/>
-    <id>http://www.blog.geyunjie.com/2017/09/12/prototype/</id>
+    <title>设置cookie</title>
+    <link href="http://www.blog.geyunjie.com/2017/09/12/set-cookie/"/>
+    <id>http://www.blog.geyunjie.com/2017/09/12/set-cookie/</id>
     <published>2017-09-12T13:33:07.000Z</published>
-    <updated>2020-01-17T02:59:02.264Z</updated>
+    <updated>2020-05-31T05:46:18.934Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="总结-原型对象-对象原型-构造函数-之间的关系-以及js的原型链问题"><a href="#总结-原型对象-对象原型-构造函数-之间的关系-以及js的原型链问题" class="headerlink" title="总结 原型对象  对象原型  构造函数 之间的关系  以及js的原型链问题"></a>总结 原型对象  对象原型  构造函数 之间的关系  以及js的原型链问题</h2><p>这个只是点，想必每个前端程序员都会。具体的不再这多说，请往下看</p><h2 id="原型对象-prototype"><a href="#原型对象-prototype" class="headerlink" title="原型对象 prototype"></a>原型对象 prototype</h2><blockquote><p>是构造函数的属性，这个属性是一个对象，称为原型对象</p><p>每个函数都有一个prototype原型对象</p><p>作用：共享方法，达到节省内存的目的。  如果不共享方法，每次实例化对象就得创建原型链上的所有的方法，浪费内存</p></blockquote><h2 id="对象原型-简称原型-ptoto"><a href="#对象原型-简称原型-ptoto" class="headerlink" title="对象原型 简称原型 ptoto"></a>对象原型 简称原型 <strong><strong>ptoto</strong></strong></h2><blockquote><p><strong>作用</strong>：指向原型对象  只读属性  只是提供对象的查找机制</p><p>每一个对象都有一个原型，作用是指向原型对象prototype</p></blockquote><h2 id="构造函数-constructor"><a href="#构造函数-constructor" class="headerlink" title="构造函数 constructor"></a>构造函数 constructor</h2><blockquote><p>作用：记录是哪个构造函数创建出来的   指向构造函数本身   用来让原型对象重新指向原来的构造函数</p><p><img src="./%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E5%8E%9F%E5%9E%8B%E4%B8%8E%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0.png" alt="原型对象原型与构造函数"></p></blockquote><p>​    </p><h2 id="js原型链"><a href="#js原型链" class="headerlink" title="js原型链"></a>js原型链</h2><blockquote><p>js的原型链就是js的一个查找规则<br>查找的规则就如上图所属那样通过原型对象  一直往上查找<br>js可以通过原型链  一级一级的向上查找， 直到查找到为止，原型链的最终指向为  null</p></blockquote><p>注意：部分文章可能会在不就的将来更新</p><p>如果能够帮助到你，是小编最大的荣幸</p><p>当然   有 不好的地方  请大家帮忙指出   学习永无止境    </p><p>小编一直认为  人外有人  天外有天    一起学习   共同进步</p><p>让我们共同加油吧！！！</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="通过js设置cookie的方法"><a href="#通过js设置cookie的方法" class="headerlink" title="通过js设置cookie的方法"></a>通过js设置cookie的方法</h2><p>我们在前端开发中，通常都需要获取并记录用户的某些操作设置，这样可以使用户下一次访问网站时不用进行重复的调整设置同一个功能。</p><p>此次文章中的方法是在前端开发工作中自己随手写的一组通过js设置与获取cookie的方法，能够应用在多说情况下，没做细挖与深究</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cookie = &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>:function(key,val,time)&#123;<span class="comment">//设置cookie方法</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> date=<span class="keyword">new</span> <span class="built_in">Date</span>(); <span class="comment">//获取当前时间</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> expiresDays=time;  <span class="comment">//将date设置为n天以后的时间</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">date.setTime(date.getTime()+expiresDays*<span class="number">24</span>*<span class="number">3600</span>*<span class="number">1000</span>); <span class="comment">//格式化为cookie识别的时间</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.cookie=key + <span class="string">"="</span> + val +<span class="string">";expires="</span>+date.toGMTString();  <span class="comment">//设置cookie</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">get</span>:function(key)&#123;<span class="comment">//获取cookie方法</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="comment">/*获取cookie参数*/</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> getCookie = <span class="built_in">document</span>.cookie.replace(<span class="regexp">/[ ]/g</span>,<span class="string">""</span>);  <span class="comment">//获取cookie，并且将获得的cookie格式化，去掉空格字符</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arrCookie = getCookie.split(<span class="string">";"</span>)  <span class="comment">//将获得的cookie以"分号"为标识 将cookie保存到arrCookie的数组中</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> tips;  <span class="comment">//声明变量tips</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arrCookie.length;i++)&#123;   <span class="comment">//使用for循环查找cookie中的tips变量</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr=arrCookie[i].split(<span class="string">"="</span>);   <span class="comment">//将单条cookie用"等号"为标识，将单条cookie保存为arr数组</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(key==arr[<span class="number">0</span>])&#123;  <span class="comment">//匹配变量名称，其中arr[0]是指的cookie名称，如果该条变量为tips则执行判断语句中的赋值操作</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">tips=arr[<span class="number">1</span>];   <span class="comment">//将cookie的值赋给变量tips</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">break</span>;   <span class="comment">//终止for循环遍历</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">&#125; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> tips;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure><p>下面简单的说明一下设置与获取的方法，便于前端开发新手用户使用</p><blockquote><p>设置cookie的方法为：cookie.set(key,val,time)</p><ol><li>key可以理解为cookie的变量名</li><li>val可以理解为这个cookie所带有的值</li><li>time是cookie的超时时间，单位为天</li></ol><p>获取cookie的方法为：cookie.get(key)</p><ol><li>key就是刚才我们设置时的cookie变量名</li><li>我们只需要将函数赋值给新的变量即可调用这个值，例如：var n = cookie.get(key);</li><li>方法写的不算复杂，比较适合前端开发新手使用</li></ol></blockquote><p>如果能够帮助到你，是小编最大的荣幸</p><p>当然   有 不好的地方  请大家帮忙指出   学习永无止境    </p><p>小编一直认为  人外有人  天外有天    一起学习   共同进步</p><p>让我们共同加油吧！！</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;总结-原型对象-对象原型-构造函数-之间的关系-以及js的原型链问题&quot;&gt;&lt;a href=&quot;#总结-原型对象-对象原型-构造函数-之间的关系-以及js的原型链问题&quot; class=&quot;headerlink&quot; title=&quot;总结 原型对象  对象原型  构造函数 之间的关
+        &lt;h2 id=&quot;通过js设置cookie的方法&quot;&gt;&lt;a href=&quot;#通过js设置cookie的方法&quot; class=&quot;headerlink&quot; title=&quot;通过js设置cookie的方法&quot;&gt;&lt;/a&gt;通过js设置cookie的方法&lt;/h2&gt;&lt;p&gt;我们在前端开发中，通常都需要获取并记
       
     
     </summary>
     
     
-      <category term="javascript" scheme="http://www.blog.geyunjie.com/categories/javascript/"/>
+      <category term="cookie" scheme="http://www.blog.geyunjie.com/categories/cookie/"/>
     
     
-      <category term="javascript" scheme="http://www.blog.geyunjie.com/tags/javascript/"/>
+      <category term="cookie" scheme="http://www.blog.geyunjie.com/tags/cookie/"/>
     
   </entry>
   
@@ -384,6 +384,32 @@
       
       
         &lt;h1 id=&quot;javascript中闭包的工作原理&quot;&gt;&lt;a href=&quot;#javascript中闭包的工作原理&quot; class=&quot;headerlink&quot; title=&quot;javascript中闭包的工作原理&quot;&gt;&lt;/a&gt;javascript中闭包的工作原理&lt;/h1&gt;&lt;h2 id=&quot;1
+      
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="http://www.blog.geyunjie.com/categories/javascript/"/>
+    
+    
+      <category term="javascript" scheme="http://www.blog.geyunjie.com/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript原型</title>
+    <link href="http://www.blog.geyunjie.com/2017/09/12/prototype/"/>
+    <id>http://www.blog.geyunjie.com/2017/09/12/prototype/</id>
+    <published>2017-09-12T13:33:07.000Z</published>
+    <updated>2020-01-17T02:59:02.264Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="总结-原型对象-对象原型-构造函数-之间的关系-以及js的原型链问题"><a href="#总结-原型对象-对象原型-构造函数-之间的关系-以及js的原型链问题" class="headerlink" title="总结 原型对象  对象原型  构造函数 之间的关系  以及js的原型链问题"></a>总结 原型对象  对象原型  构造函数 之间的关系  以及js的原型链问题</h2><p>这个只是点，想必每个前端程序员都会。具体的不再这多说，请往下看</p><h2 id="原型对象-prototype"><a href="#原型对象-prototype" class="headerlink" title="原型对象 prototype"></a>原型对象 prototype</h2><blockquote><p>是构造函数的属性，这个属性是一个对象，称为原型对象</p><p>每个函数都有一个prototype原型对象</p><p>作用：共享方法，达到节省内存的目的。  如果不共享方法，每次实例化对象就得创建原型链上的所有的方法，浪费内存</p></blockquote><h2 id="对象原型-简称原型-ptoto"><a href="#对象原型-简称原型-ptoto" class="headerlink" title="对象原型 简称原型 ptoto"></a>对象原型 简称原型 <strong><strong>ptoto</strong></strong></h2><blockquote><p><strong>作用</strong>：指向原型对象  只读属性  只是提供对象的查找机制</p><p>每一个对象都有一个原型，作用是指向原型对象prototype</p></blockquote><h2 id="构造函数-constructor"><a href="#构造函数-constructor" class="headerlink" title="构造函数 constructor"></a>构造函数 constructor</h2><blockquote><p>作用：记录是哪个构造函数创建出来的   指向构造函数本身   用来让原型对象重新指向原来的构造函数</p><p><img src="./%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E5%8E%9F%E5%9E%8B%E4%B8%8E%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0.png" alt="原型对象原型与构造函数"></p></blockquote><p>​    </p><h2 id="js原型链"><a href="#js原型链" class="headerlink" title="js原型链"></a>js原型链</h2><blockquote><p>js的原型链就是js的一个查找规则<br>查找的规则就如上图所属那样通过原型对象  一直往上查找<br>js可以通过原型链  一级一级的向上查找， 直到查找到为止，原型链的最终指向为  null</p></blockquote><p>注意：部分文章可能会在不就的将来更新</p><p>如果能够帮助到你，是小编最大的荣幸</p><p>当然   有 不好的地方  请大家帮忙指出   学习永无止境    </p><p>小编一直认为  人外有人  天外有天    一起学习   共同进步</p><p>让我们共同加油吧！！！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;总结-原型对象-对象原型-构造函数-之间的关系-以及js的原型链问题&quot;&gt;&lt;a href=&quot;#总结-原型对象-对象原型-构造函数-之间的关系-以及js的原型链问题&quot; class=&quot;headerlink&quot; title=&quot;总结 原型对象  对象原型  构造函数 之间的关
       
     
     </summary>
