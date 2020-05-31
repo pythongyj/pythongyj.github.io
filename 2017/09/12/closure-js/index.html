@@ -38,7 +38,7 @@
 </ol>
 <p>到此，整个函数<strong>fn</strong>从定义到执行的步骤就完成了。此时<strong>fn</strong>返回函数<strong>closure</strong>的引用给<strong>clo</strong>，又函数<strong>closure</strong>的作用域链包含了对函数<strong>fn</strong>的活动对象的引用，也就是说<strong>closure</strong>可以访问到<strong>fn</strong>中定义的所有变量和函数。函数<strong>closure</strong>被<strong>clo</strong>引用，函数<strong>closure</strong>又依赖函数<strong>fn</strong>，因此函数<strong>fn</strong>在返回后不会被GC回收。</p>
 <p>当函数<strong>closure</strong>执行的时候亦会像以上步骤一样。因此，执行时b的作用域链包含了3个对象：<strong>closure</strong>的活动对象、<strong>fn</strong>的活动对象和window对象，如下图所示：</p>
-<p><img src="closure-js/clo.jpg" alt="clo"></p>
+<p><img src="clo.jpg" alt="clo"></p>
 <p>注意：图片来源于网络</p>
 <p>如图所示，当在函数<strong>closure</strong>中访问一个变量的时候，搜索顺序是：</p>
 <ol>
