@@ -44,6 +44,70 @@
   </entry>
   
   <entry>
+    <title>vant-UI 组件的List渲染列表多页列表 切换不加载的问题</title>
+    <link href="http://www.blog.geyunjie.com/2019/06/04/vant-list/"/>
+    <id>http://www.blog.geyunjie.com/2019/06/04/vant-list/</id>
+    <published>2019-06-04T12:15:11.000Z</published>
+    <updated>2020-05-31T07:46:59.179Z</updated>
+    
+    <content type="html"><![CDATA[<p>1 数据渲染</p><p>template</p><pre><code>&lt;van-list  v-for=&quot;items in tabbar&quot;  :key=&quot;items.id&quot;  v-show=&quot;items.isActive&quot;  v-model=&quot;items.loading&quot;  :finished=&quot;items.finished&quot;  finished-text=&quot;没有更多了&quot;  @load=&quot;onLoad(items)&quot;  ref=&quot;listItem&quot;&gt;  &lt;van-cell v-for=&quot;item in items.list&quot; :key=&quot;item&quot; :title=&quot;item&quot;&gt;{{        items.value      }}&lt;/van-cell&gt;&lt;/van-list&gt;</code></pre><p>data</p><pre><code>data() {   return {     tabbar: [       {         id: 1,         value: &quot;Lorem&quot;,         isActive: true,         loading: false,         finished: false,         list: [],       },       {         id: 2,         value: &quot;Lorem2&quot;,         isActive: false,         loading: false,         finished: false,         list: [],       },       {         id: 3,         value: &quot;Lorem3&quot;,         isActive: false,         loading: false,         finished: false,         list: [],       },     ],   }; },</code></pre><p>methods</p><pre><code>onLoad(obj) {  // 异步更新数据  // setTimeout 仅做示例，真实场景中一般为 ajax 请求  setTimeout(() =&gt; {    for (let i = 0; i &lt; 10; i++) {      obj.list.push(obj.list.length + 1);    }    console.log(obj.id);    console.log(obj.finished);    // 加载状态结束    obj.loading = false;    // 数据全部加载完成    if (obj.list.length &gt;= 40) {      obj.finished = true;    }  }, 1000);},/** * 切换选项 * obj  选项的数据 */onClickLoadData(obj) {  this.tabbar.forEach((item) =&gt; {    item.isActive = false;  });  obj.isActive = true;},</code></pre><p>切换页面  会发现  数据不会加载</p><p>这是为什么呢？</p><p>这是因为页面渲染的时候  已经进行过加载了   在点击切换按钮的时候  并没有触发onload事件</p><p>那么你可能会说   那点击的时候调用一次onLoad事件不就好了么？</p><p>对   点击的时候调用一次onLoad是会触发调用 </p><p>但是呢？ </p><p>第一个问题：如果第一次加载的数据不足以铺满全屏，那么  数据就不会继续加载了</p><p>第二个问题：如果你的数据已经全部加载结束了，但是你点击切换的时候  由于你调用了onLoad事件。就还会触发。</p><p>那么！</p><p>你也许会问 那该怎么做呢？</p><p>那么现在我就告诉你</p><p>超简单  一行代码搞定</p><p>官方给了一个    check方法</p><p>所以  我们就可以这样做</p><pre><code>/** * 切换选项 * obj  选项的数据 */onClickLoadData(obj) {  this.tabbar.forEach((item) =&gt; {    item.isActive = false;  });  obj.isActive = true;+  this.$refs.listItem[obj.id - 1].check();检查点击的选项所显示的页面的滚动位置，若已滚动至底部，则会触发 load 事件  [obj.id - 1]为选中当前的list},</code></pre><p>完美搞定 </p><p>注意：部分文章可能会在不就的将来更新</p><p>如果能够帮助到你，是小编最大的荣幸</p><p>当然 有 不好的地方 请大家帮忙指出 学习永无止境</p><p>小编一直认为 人外有人 天外有天 一起学习 共同进步</p><p>让我们共同加油吧！！！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1 数据渲染&lt;/p&gt;
+&lt;p&gt;template&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;van-list
+  v-for=&amp;quot;items in tabbar&amp;quot;
+  :key=&amp;quot;items.id&amp;quot;
+  v-show=&amp;quot;items.i
+      
+    
+    </summary>
+    
+    
+      <category term="vant" scheme="http://www.blog.geyunjie.com/categories/vant/"/>
+    
+    
+      <category term="vant" scheme="http://www.blog.geyunjie.com/tags/vant/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue-router</title>
+    <link href="http://www.blog.geyunjie.com/2019/05/24/vue-router-parms/"/>
+    <id>http://www.blog.geyunjie.com/2019/05/24/vue-router-parms/</id>
+    <published>2019-05-24T14:33:13.000Z</published>
+    <updated>2020-05-31T07:45:36.985Z</updated>
+    
+    <content type="html"><![CDATA[<p>vue-router 路由传参方式</p><p>1 路由组件传参</p><p>1.1 布尔模式</p><p>1.1.1 配置路由</p><p>添加 props: true 选项</p><pre><code>{   // 我的地址列表   name: &quot;addressedit&quot;,   path: &quot;/account/addressedit&quot;,   props: true,   component: () =&gt; import(&quot;@/views/addressEdit&quot;), },</code></pre><p>1.1.2 传递参数</p><p>在传参的过程中 写上 props: true, 说明开启了路由组件传参</p><pre><code>onEditAddress(item, index) {  this.$router.push({    name: &quot;addressedit&quot;,    params: { id: index },    props: true,  });  this.$toast(&quot;编辑地址:&quot; + index);},</code></pre><p>1.1.3 获取传递的参数</p><p>通过 route 对象上的 params 属性获取传递过来的属性 即：this.$route.params</p><pre><code>this.$route.params.id</code></pre><p>注意：部分文章可能会在不就的将来更新</p><p>如果能够帮助到你，是小编最大的荣幸</p><p>当然 有 不好的地方 请大家帮忙指出 学习永无止境</p><p>小编一直认为 人外有人 天外有天 一起学习 共同进步</p><p>让我们共同加油吧！！！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;vue-router 路由传参方式&lt;/p&gt;
+&lt;p&gt;1 路由组件传参&lt;/p&gt;
+&lt;p&gt;1.1 布尔模式&lt;/p&gt;
+&lt;p&gt;1.1.1 配置路由&lt;/p&gt;
+&lt;p&gt;添加 props: true 选项&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+   // 我的地址列表
+   name: &amp;quot
+      
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="http://www.blog.geyunjie.com/categories/vue/"/>
+    
+    
+      <category term="vue-router" scheme="http://www.blog.geyunjie.com/tags/vue-router/"/>
+    
+  </entry>
+  
+  <entry>
     <title>vue-i18n</title>
     <link href="http://www.blog.geyunjie.com/2019/05/18/vue-i18n/"/>
     <id>http://www.blog.geyunjie.com/2019/05/18/vue-i18n/</id>
@@ -212,33 +276,6 @@
   </entry>
   
   <entry>
-    <title>微信小程序登录验证</title>
-    <link href="http://www.blog.geyunjie.com/2018/04/15/login-wx/"/>
-    <id>http://www.blog.geyunjie.com/2018/04/15/login-wx/</id>
-    <published>2018-04-15T00:54:07.000Z</published>
-    <updated>2020-02-26T15:26:54.439Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p>在说怎么做之前，先看下这个流程图</p><p><img src="./%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81%E6%B5%81%E7%A8%8B.png" alt=""></p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>看完这个流程图 ，相必大家已经很清楚了。</p><p>为了防止大家不太明白，再次给大家聊一下流程图</p><ol><li>在授权之前，应该选判断是否已经授权。因为在别的地方已经授权了<ul><li>已授权：直接跳过授权的过程，进行本该进行的操作</li><li>未授权：进如以下流程进行授权</li></ul></li><li>获取用户信息。<ul><li>由于用户信息是隐私为题，需要征求用户的同意。所以，把这一步放到第二步，而不是第三步。</li><li>用户同意获取用户信息：获取用户系信息</li><li>用户不同意获取用户信息：终止以下操作，返回最开始授权之前的页面</li></ul></li><li>使用微信提供的API接口wx.login()，请求微信的服务器，获取code<ul><li>成功：返回code</li><li>失败：返回错误信息</li></ul></li><li>使用获取到的<strong>用户信息+code</strong>向公司的服务器发起获取<strong>Token</strong>的  接口  请求。服务器根据传递的数据进行判断<ul><li>请求成功：返回<strong>token</strong> 和请求成功的  状态信息等</li><li>请求失败：返回失败的  错误信息  比如：code不一致等（后端程序员编写具体的接口返回内容）</li></ul></li><li>当请求成功后，进行<strong>本地存储</strong>  ，并开始授权之前的操作<ul><li>使用微信小程序提供的API接口，进行本地存储</li><li>以后再有地方需要token的地方，就会直接从本地获取Token，而无需再次进行用户授权</li></ul></li></ol><p>   注意：部分文章可能会在不就的将来更新</p><p>  如果能够帮助到你，是小编最大的荣幸</p><p>  当然   有 不好的地方  请大家帮忙指出   学习永无止境    </p><p>  小编一直认为  人外有人  天外有天    一起学习   共同进步</p><p>  让我们共同加油吧！！！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;流程图&quot;&gt;&lt;a href=&quot;#流程图&quot; class=&quot;headerlink&quot; title=&quot;流程图&quot;&gt;&lt;/a&gt;流程图&lt;/h2&gt;&lt;p&gt;在说怎么做之前，先看下这个流程图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7
-      
-    
-    </summary>
-    
-    
-      <category term="小程序" scheme="http://www.blog.geyunjie.com/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    
-      <category term="小程序" scheme="http://www.blog.geyunjie.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
     <title>前端规范</title>
     <link href="http://www.blog.geyunjie.com/2018/04/15/norm/"/>
     <id>http://www.blog.geyunjie.com/2018/04/15/norm/</id>
@@ -265,6 +302,33 @@
     
     
       <category term="javascript" scheme="http://www.blog.geyunjie.com/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微信小程序登录验证</title>
+    <link href="http://www.blog.geyunjie.com/2018/04/15/login-wx/"/>
+    <id>http://www.blog.geyunjie.com/2018/04/15/login-wx/</id>
+    <published>2018-04-15T00:54:07.000Z</published>
+    <updated>2020-02-26T15:26:54.439Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p>在说怎么做之前，先看下这个流程图</p><p><img src="./%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81%E6%B5%81%E7%A8%8B.png" alt=""></p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>看完这个流程图 ，相必大家已经很清楚了。</p><p>为了防止大家不太明白，再次给大家聊一下流程图</p><ol><li>在授权之前，应该选判断是否已经授权。因为在别的地方已经授权了<ul><li>已授权：直接跳过授权的过程，进行本该进行的操作</li><li>未授权：进如以下流程进行授权</li></ul></li><li>获取用户信息。<ul><li>由于用户信息是隐私为题，需要征求用户的同意。所以，把这一步放到第二步，而不是第三步。</li><li>用户同意获取用户信息：获取用户系信息</li><li>用户不同意获取用户信息：终止以下操作，返回最开始授权之前的页面</li></ul></li><li>使用微信提供的API接口wx.login()，请求微信的服务器，获取code<ul><li>成功：返回code</li><li>失败：返回错误信息</li></ul></li><li>使用获取到的<strong>用户信息+code</strong>向公司的服务器发起获取<strong>Token</strong>的  接口  请求。服务器根据传递的数据进行判断<ul><li>请求成功：返回<strong>token</strong> 和请求成功的  状态信息等</li><li>请求失败：返回失败的  错误信息  比如：code不一致等（后端程序员编写具体的接口返回内容）</li></ul></li><li>当请求成功后，进行<strong>本地存储</strong>  ，并开始授权之前的操作<ul><li>使用微信小程序提供的API接口，进行本地存储</li><li>以后再有地方需要token的地方，就会直接从本地获取Token，而无需再次进行用户授权</li></ul></li></ol><p>   注意：部分文章可能会在不就的将来更新</p><p>  如果能够帮助到你，是小编最大的荣幸</p><p>  当然   有 不好的地方  请大家帮忙指出   学习永无止境    </p><p>  小编一直认为  人外有人  天外有天    一起学习   共同进步</p><p>  让我们共同加油吧！！！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;流程图&quot;&gt;&lt;a href=&quot;#流程图&quot; class=&quot;headerlink&quot; title=&quot;流程图&quot;&gt;&lt;/a&gt;流程图&lt;/h2&gt;&lt;p&gt;在说怎么做之前，先看下这个流程图&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7
+      
+    
+    </summary>
+    
+    
+      <category term="小程序" scheme="http://www.blog.geyunjie.com/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+      <category term="小程序" scheme="http://www.blog.geyunjie.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
