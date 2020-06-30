@@ -2,149 +2,163 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.blog.geyunjie.com/2020/06/27/gitConfig/</loc>
+    
+    <lastmod>2020-06-27T12:10:22.811Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.blog.geyunjie.com/2020/06/27/Homebrew/</loc>
+    
+    <lastmod>2020-06-27T12:08:12.255Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.blog.geyunjie.com/2019/06/04/vant-list/</loc>
     
-    <lastmod>2020-05-31T07:53:28.241Z</lastmod>
+    <lastmod>2020-05-31T07:53:28.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.blog.geyunjie.com/2019/05/24/vue-router-parms/</loc>
     
-    <lastmod>2020-05-31T07:45:36.985Z</lastmod>
+    <lastmod>2020-05-31T07:45:36.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.blog.geyunjie.com/2019/05/18/vue-i18n/</loc>
     
-    <lastmod>2020-05-31T07:28:21.399Z</lastmod>
+    <lastmod>2020-05-31T07:28:20.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.blog.geyunjie.com/2020/05/12/vue-proxy/</loc>
     
-    <lastmod>2020-05-31T06:17:54.950Z</lastmod>
+    <lastmod>2020-05-31T06:17:54.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.blog.geyunjie.com/2017/11/12/set-cookie/</loc>
     
-    <lastmod>2020-05-31T05:55:15.755Z</lastmod>
+    <lastmod>2020-05-31T05:55:14.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.blog.geyunjie.com/2017/09/12/closure-js/</loc>
     
-    <lastmod>2020-05-31T05:49:33.131Z</lastmod>
+    <lastmod>2020-05-31T05:49:32.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.blog.geyunjie.com/2018/08/15/vue-1/</loc>
     
-    <lastmod>2020-03-24T02:33:18.476Z</lastmod>
+    <lastmod>2020-03-24T02:33:18.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.blog.geyunjie.com/2018/02/15/docsify/</loc>
     
-    <lastmod>2020-03-16T08:38:18.025Z</lastmod>
+    <lastmod>2020-03-16T08:38:18.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.blog.geyunjie.com/2017/09/12/css-properties/</loc>
     
-    <lastmod>2020-03-01T09:06:24.235Z</lastmod>
+    <lastmod>2020-03-01T09:06:24.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.blog.geyunjie.com/2018/07/13/layout/</loc>
     
-    <lastmod>2020-02-26T17:01:54.409Z</lastmod>
+    <lastmod>2020-02-26T17:01:54.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.blog.geyunjie.com/2017/09/12/block/</loc>
     
-    <lastmod>2020-02-26T15:36:54.157Z</lastmod>
+    <lastmod>2020-02-26T15:36:54.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.blog.geyunjie.com/2018/04/15/login-wx/</loc>
     
-    <lastmod>2020-02-26T15:26:54.439Z</lastmod>
+    <lastmod>2020-02-26T15:26:54.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.blog.geyunjie.com/2018/05/12/qureyUrlParams/</loc>
     
-    <lastmod>2020-01-17T03:30:34.572Z</lastmod>
+    <lastmod>2020-01-17T03:30:34.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.blog.geyunjie.com/2017/09/12/prototype/</loc>
     
-    <lastmod>2020-01-17T02:59:02.264Z</lastmod>
+    <lastmod>2020-01-17T02:59:02.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.blog.geyunjie.com/2018/02/15/RegExp/</loc>
     
-    <lastmod>2020-01-17T02:39:29.792Z</lastmod>
+    <lastmod>2020-01-17T02:39:28.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.blog.geyunjie.com/2018/04/15/norm/</loc>
     
-    <lastmod>2020-01-16T04:08:01.095Z</lastmod>
+    <lastmod>2020-01-16T04:08:00.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.blog.geyunjie.com/2018/02/15/divCenter/</loc>
     
-    <lastmod>2020-01-16T04:05:34.639Z</lastmod>
+    <lastmod>2020-01-16T04:05:34.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.blog.geyunjie.com/2018/08/15/amdcmdcom/</loc>
     
-    <lastmod>2020-01-16T03:14:43.340Z</lastmod>
+    <lastmod>2020-01-16T03:14:42.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.blog.geyunjie.com/2017/08/15/starthtml/</loc>
     
-    <lastmod>2020-01-16T02:22:27.966Z</lastmod>
+    <lastmod>2020-01-16T02:22:26.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.blog.geyunjie.com/2019/03/21/iconfont/</loc>
     
-    <lastmod>2020-01-15T06:55:29.048Z</lastmod>
+    <lastmod>2020-01-15T06:55:28.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.blog.geyunjie.com/about/index.html</loc>
     
-    <lastmod>2020-01-14T10:44:17.530Z</lastmod>
+    <lastmod>2020-01-14T10:44:16.000Z</lastmod>
     
   </url>
   
