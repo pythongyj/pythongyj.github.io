@@ -162,9 +162,9 @@
     <link href="http://www.blog.geyunjie.com/2020/03/20/hexo-gitalk/"/>
     <id>http://www.blog.geyunjie.com/2020/03/20/hexo-gitalk/</id>
     <published>2020-03-20T05:03:39.000Z</published>
-    <updated>2020-07-08T09:10:22.730Z</updated>
+    <updated>2020-07-08T09:15:31.710Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote><p>​    由于本人的能力有限，如若有说得做的不对的地方，还望指出。当然，如若你有更好的方法，或者更优解，还望不吝赐教。</p></blockquote><h2 id="1、什么是gitalk？"><a href="#1、什么是gitalk？" class="headerlink" title="1、什么是gitalk？"></a>1、什么是gitalk？</h2><blockquote><p><strong>Gitalk</strong> 利用了 <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fdeveloper.github.com%2Fv3%2F" target="_blank" rel="noopener">GithubAPI</a> 基于 <strong>GitHub Issue</strong> 和 <strong>Preact</strong> 开发的评论插件，官方网址： <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgitalk.github.io%2F" target="_blank" rel="noopener">https://gitalk.github.io</a></p><p>特点：</p><ul><li>使用 GitHub 登录</li><li>支持多语言 [en, zh-CN, zh-TW, es-ES, fr, ru]</li><li>支持个人或组织</li><li>无干扰模式（设置 distractionFreeMode 为 true 开启）</li><li>快捷键提交评论 </li></ul></blockquote><h2 id="2、配置gitalk"><a href="#2、配置gitalk" class="headerlink" title="2、配置gitalk"></a>2、配置gitalk</h2><blockquote><ol><li><p>注册：要使用 Gitalk 需要先在 GitHub 上注册新应用，链接：<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsettings%2Fapplications%2Fnew" target="_blank" rel="noopener">https</a> : <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsettings%2Fapplications%2Fnew" target="_blank" rel="noopener">//github.com/settings/applications/new</a></p><p><img src="hexo-gitalk/hexo-1.png" alt="hexo-1"> 2. 点击注册后，会生成<strong>Client ID</strong>和<strong>Client Secret</strong>在配置中需要用到，也是应用访问你 Github 的凭证，具体配置如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">comment:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  gitalk:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="built_in">enable</span>: <span class="literal">true</span> <span class="comment">## If you want to use Gitment comment system please set the value to true.</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    ID: location.pathname</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    owner: pythongyj <span class="comment">## Your GitHub ID, e.g. username</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    repo: gitalk <span class="comment">## The repository to store your comments, make sure you're the repo's owner, e.g. gitalk.github.io</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    client_id: xxx <span class="comment">## GitHub client ID, e.g. 75752dafe7907a897619</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    client_secret: xxx <span class="comment">## GitHub client secret, e.g. ec2fb9054972c891289640354993b662f4cccc50</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    admin: pythongyj <span class="comment">## Github repo owner and collaborators, only these guys can initialize github issues.</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    language: zh-CN <span class="comment">## Language</span></span></pre></td></tr></table></figure><ol start="3"><li>重新部署博客，打开页面进入某一博客内容下，评论会出现在页面最下方</li></ol></li></ol></blockquote><h2 id="3、遇到的坑"><a href="#3、遇到的坑" class="headerlink" title="3、遇到的坑"></a>3、遇到的坑</h2><blockquote><p>自己遇到的坑：</p><ol><li><h4 id="未找到相关的issue进行评论，请联系-XXX初始化创建。"><a href="#未找到相关的issue进行评论，请联系-XXX初始化创建。" class="headerlink" title="未找到相关的issue进行评论，请联系@XXX初始化创建。"></a>未找到相关的issue进行评论，请联系@XXX初始化创建。</h4><ul><li>解决办法：出现这总情况是因为博主未给文章评论初始化，博主只需要登录 GitHub 账户即可。</li></ul></li><li><h4 id="浏览器进入开发者模式，看见类似https-api-github-com-user-401-Unauthorized"><a href="#浏览器进入开发者模式，看见类似https-api-github-com-user-401-Unauthorized" class="headerlink" title="浏览器进入开发者模式，看见类似https://api.github.com/user 401 (Unauthorized)"></a>浏览器进入开发者模式，看见类似<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fapi.github.com%2Fuser" target="_blank" rel="noopener">https://api.github.com/user</a> 401 (Unauthorized)</h4><ul><li>解决办法：找到主题配置文件， 在 gitalk 配置里添加 <strong>ID: location.pathname</strong></li></ul></li></ol><p>查找问题时发现的的坑：</p><ol><li><h4 id="Error-Not-Found"><a href="#Error-Not-Found" class="headerlink" title="Error: Not Found."></a>Error: Not Found.</h4><ul><li>解决办法：未能正确找到仓库 repo，检查一下你的仓库是否配置正确</li></ul></li></ol></blockquote><p>   注意：部分文章可能会在不就的将来更新</p><p>  如果能够帮助到你，是小编最大的荣幸</p><p>  当然   有 不好的地方  请大家帮忙指出   学习永无止境    </p><p>  小编一直认为  人外有人  天外有天    一起学习   共同进步</p><p>  让我们共同加油吧！！！</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote><p>​    由于本人的能力有限，如若有说得做的不对的地方，还望指出。当然，如若你有更好的方法，或者更优解，还望不吝赐教。</p></blockquote><h2 id="1、什么是gitalk？"><a href="#1、什么是gitalk？" class="headerlink" title="1、什么是gitalk？"></a>1、什么是gitalk？</h2><blockquote><p><strong>Gitalk</strong> 利用了 <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fdeveloper.github.com%2Fv3%2F" target="_blank" rel="noopener">GithubAPI</a> 基于 <strong>GitHub Issue</strong> 和 <strong>Preact</strong> 开发的评论插件，官方网址： <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgitalk.github.io%2F" target="_blank" rel="noopener">https://gitalk.github.io</a></p><p>特点：</p><ul><li>使用 GitHub 登录</li><li>支持多语言 [en, zh-CN, zh-TW, es-ES, fr, ru]</li><li>支持个人或组织</li><li>无干扰模式（设置 distractionFreeMode 为 true 开启）</li><li>快捷键提交评论 </li></ul></blockquote><h2 id="2、配置gitalk"><a href="#2、配置gitalk" class="headerlink" title="2、配置gitalk"></a>2、配置gitalk</h2><blockquote><ol><li><p>注册：要使用 Gitalk 需要先在 GitHub 上注册新应用，链接：<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsettings%2Fapplications%2Fnew" target="_blank" rel="noopener">https</a> : <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsettings%2Fapplications%2Fnew" target="_blank" rel="noopener">//github.com/settings/applications/new</a></p><p><img src="hexo-1.png" alt="hexo-1"> 2. 点击注册后，会生成<strong>Client ID</strong>和<strong>Client Secret</strong>在配置中需要用到，也是应用访问你 Github 的凭证，具体配置如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">comment:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  gitalk:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="built_in">enable</span>: <span class="literal">true</span> <span class="comment">## If you want to use Gitment comment system please set the value to true.</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    ID: location.pathname</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    owner: pythongyj <span class="comment">## Your GitHub ID, e.g. username</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    repo: gitalk <span class="comment">## The repository to store your comments, make sure you're the repo's owner, e.g. gitalk.github.io</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    client_id: xxx <span class="comment">## GitHub client ID, e.g. 75752dafe7907a897619</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    client_secret: xxx <span class="comment">## GitHub client secret, e.g. ec2fb9054972c891289640354993b662f4cccc50</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    admin: pythongyj <span class="comment">## Github repo owner and collaborators, only these guys can initialize github issues.</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    language: zh-CN <span class="comment">## Language</span></span></pre></td></tr></table></figure><ol start="3"><li>重新部署博客，打开页面进入某一博客内容下，评论会出现在页面最下方</li></ol></li></ol></blockquote><h2 id="3、遇到的坑"><a href="#3、遇到的坑" class="headerlink" title="3、遇到的坑"></a>3、遇到的坑</h2><blockquote><p>自己遇到的坑：</p><ol><li><h4 id="未找到相关的issue进行评论，请联系-XXX初始化创建。"><a href="#未找到相关的issue进行评论，请联系-XXX初始化创建。" class="headerlink" title="未找到相关的issue进行评论，请联系@XXX初始化创建。"></a>未找到相关的issue进行评论，请联系@XXX初始化创建。</h4><ul><li>解决办法：出现这总情况是因为博主未给文章评论初始化，博主只需要登录 GitHub 账户即可。</li></ul></li><li><h4 id="浏览器进入开发者模式，看见类似https-api-github-com-user-401-Unauthorized"><a href="#浏览器进入开发者模式，看见类似https-api-github-com-user-401-Unauthorized" class="headerlink" title="浏览器进入开发者模式，看见类似https://api.github.com/user 401 (Unauthorized)"></a>浏览器进入开发者模式，看见类似<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fapi.github.com%2Fuser" target="_blank" rel="noopener">https://api.github.com/user</a> 401 (Unauthorized)</h4><ul><li>解决办法：找到主题配置文件， 在 gitalk 配置里添加 <strong>ID: location.pathname</strong></li></ul></li></ol><p>查找问题时发现的的坑：</p><ol><li><h4 id="Error-Not-Found"><a href="#Error-Not-Found" class="headerlink" title="Error: Not Found."></a>Error: Not Found.</h4><ul><li>解决办法：未能正确找到仓库 repo，检查一下你的仓库是否配置正确</li></ul></li></ol></blockquote><p>   注意：部分文章可能会在不就的将来更新</p><p>  如果能够帮助到你，是小编最大的荣幸</p><p>  当然   有 不好的地方  请大家帮忙指出   学习永无止境    </p><p>  小编一直认为  人外有人  天外有天    一起学习   共同进步</p><p>  让我们共同加油吧！！！</p>]]></content>
     
     <summary type="html">
     
@@ -499,33 +499,6 @@
   </entry>
   
   <entry>
-    <title>微信小程序登录验证</title>
-    <link href="http://www.blog.geyunjie.com/2018/04/15/login-wx/"/>
-    <id>http://www.blog.geyunjie.com/2018/04/15/login-wx/</id>
-    <published>2018-04-15T00:54:07.000Z</published>
-    <updated>2020-02-26T15:26:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p>在说怎么做之前，先看下这个流程图</p><p><img src="./%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81%E6%B5%81%E7%A8%8B.png" alt=""></p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>看完这个流程图 ，相必大家已经很清楚了。</p><p>为了防止大家不太明白，再次给大家聊一下流程图</p><ol><li>在授权之前，应该选判断是否已经授权。因为在别的地方已经授权了<ul><li>已授权：直接跳过授权的过程，进行本该进行的操作</li><li>未授权：进如以下流程进行授权</li></ul></li><li>获取用户信息。<ul><li>由于用户信息是隐私为题，需要征求用户的同意。所以，把这一步放到第二步，而不是第三步。</li><li>用户同意获取用户信息：获取用户系信息</li><li>用户不同意获取用户信息：终止以下操作，返回最开始授权之前的页面</li></ul></li><li>使用微信提供的API接口wx.login()，请求微信的服务器，获取code<ul><li>成功：返回code</li><li>失败：返回错误信息</li></ul></li><li>使用获取到的<strong>用户信息+code</strong>向公司的服务器发起获取<strong>Token</strong>的  接口  请求。服务器根据传递的数据进行判断<ul><li>请求成功：返回<strong>token</strong> 和请求成功的  状态信息等</li><li>请求失败：返回失败的  错误信息  比如：code不一致等（后端程序员编写具体的接口返回内容）</li></ul></li><li>当请求成功后，进行<strong>本地存储</strong>  ，并开始授权之前的操作<ul><li>使用微信小程序提供的API接口，进行本地存储</li><li>以后再有地方需要token的地方，就会直接从本地获取Token，而无需再次进行用户授权</li></ul></li></ol><p>   注意：部分文章可能会在不就的将来更新</p><p>  如果能够帮助到你，是小编最大的荣幸</p><p>  当然   有 不好的地方  请大家帮忙指出   学习永无止境    </p><p>  小编一直认为  人外有人  天外有天    一起学习   共同进步</p><p>  让我们共同加油吧！！！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;流程图&quot;&gt;&lt;a href=&quot;#流程图&quot; class=&quot;headerlink&quot; title=&quot;流程图&quot;&gt;&lt;/a&gt;流程图&lt;/h2&gt;&lt;p&gt;在说怎么做之前，先看下这个流程图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7
-      
-    
-    </summary>
-    
-    
-      <category term="小程序" scheme="http://www.blog.geyunjie.com/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    
-      <category term="小程序" scheme="http://www.blog.geyunjie.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
     <title>前端规范</title>
     <link href="http://www.blog.geyunjie.com/2018/04/15/norm/"/>
     <id>http://www.blog.geyunjie.com/2018/04/15/norm/</id>
@@ -552,6 +525,33 @@
     
     
       <category term="javascript" scheme="http://www.blog.geyunjie.com/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微信小程序登录验证</title>
+    <link href="http://www.blog.geyunjie.com/2018/04/15/login-wx/"/>
+    <id>http://www.blog.geyunjie.com/2018/04/15/login-wx/</id>
+    <published>2018-04-15T00:54:07.000Z</published>
+    <updated>2020-02-26T15:26:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p>在说怎么做之前，先看下这个流程图</p><p><img src="./%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81%E6%B5%81%E7%A8%8B.png" alt=""></p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>看完这个流程图 ，相必大家已经很清楚了。</p><p>为了防止大家不太明白，再次给大家聊一下流程图</p><ol><li>在授权之前，应该选判断是否已经授权。因为在别的地方已经授权了<ul><li>已授权：直接跳过授权的过程，进行本该进行的操作</li><li>未授权：进如以下流程进行授权</li></ul></li><li>获取用户信息。<ul><li>由于用户信息是隐私为题，需要征求用户的同意。所以，把这一步放到第二步，而不是第三步。</li><li>用户同意获取用户信息：获取用户系信息</li><li>用户不同意获取用户信息：终止以下操作，返回最开始授权之前的页面</li></ul></li><li>使用微信提供的API接口wx.login()，请求微信的服务器，获取code<ul><li>成功：返回code</li><li>失败：返回错误信息</li></ul></li><li>使用获取到的<strong>用户信息+code</strong>向公司的服务器发起获取<strong>Token</strong>的  接口  请求。服务器根据传递的数据进行判断<ul><li>请求成功：返回<strong>token</strong> 和请求成功的  状态信息等</li><li>请求失败：返回失败的  错误信息  比如：code不一致等（后端程序员编写具体的接口返回内容）</li></ul></li><li>当请求成功后，进行<strong>本地存储</strong>  ，并开始授权之前的操作<ul><li>使用微信小程序提供的API接口，进行本地存储</li><li>以后再有地方需要token的地方，就会直接从本地获取Token，而无需再次进行用户授权</li></ul></li></ol><p>   注意：部分文章可能会在不就的将来更新</p><p>  如果能够帮助到你，是小编最大的荣幸</p><p>  当然   有 不好的地方  请大家帮忙指出   学习永无止境    </p><p>  小编一直认为  人外有人  天外有天    一起学习   共同进步</p><p>  让我们共同加油吧！！！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;流程图&quot;&gt;&lt;a href=&quot;#流程图&quot; class=&quot;headerlink&quot; title=&quot;流程图&quot;&gt;&lt;/a&gt;流程图&lt;/h2&gt;&lt;p&gt;在说怎么做之前，先看下这个流程图&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7
+      
+    
+    </summary>
+    
+    
+      <category term="小程序" scheme="http://www.blog.geyunjie.com/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+      <category term="小程序" scheme="http://www.blog.geyunjie.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
