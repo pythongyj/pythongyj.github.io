@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.blog.geyunjie.com/2020/07/07/nuxt-i18n/</loc>
+    
+    <lastmod>2020-07-08T03:28:37.235Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.blog.geyunjie.com/2018/09/12/css-line-text/</loc>
+    
+    <lastmod>2020-07-07T01:41:23.654Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.blog.geyunjie.com/2020/07/03/vue-network-online/</loc>
+    
+    <lastmod>2020-07-07T01:40:50.312Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.blog.geyunjie.com/2018/09/12/classic-article/</loc>
+    
+    <lastmod>2020-07-03T09:39:37.489Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.blog.geyunjie.com/2018/09/16/css-attr-practical/</loc>
     
     <lastmod>2020-07-03T06:05:50.821Z</lastmod>
@@ -9,23 +37,9 @@
   </url>
   
   <url>
-    <loc>http://www.blog.geyunjie.com/2018/09/12/classic-article/</loc>
-    
-    <lastmod>2020-07-03T02:35:57.939Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.blog.geyunjie.com/2018/03/21/js-set-html-font-size/</loc>
     
     <lastmod>2020-07-02T10:04:29.314Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.blog.geyunjie.com/2018/09/12/css-line-text/</loc>
-    
-    <lastmod>2020-07-01T07:00:51.903Z</lastmod>
     
   </url>
   
