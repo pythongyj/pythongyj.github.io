@@ -472,6 +472,33 @@
   </entry>
   
   <entry>
+    <title>微信小程序登录验证</title>
+    <link href="http://www.blog.geyunjie.com/2018/04/15/login-wx/"/>
+    <id>http://www.blog.geyunjie.com/2018/04/15/login-wx/</id>
+    <published>2018-04-15T00:54:07.000Z</published>
+    <updated>2020-02-26T15:26:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p>在说怎么做之前，先看下这个流程图</p><p><img src="./%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81%E6%B5%81%E7%A8%8B.png" alt=""></p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>看完这个流程图 ，相必大家已经很清楚了。</p><p>为了防止大家不太明白，再次给大家聊一下流程图</p><ol><li>在授权之前，应该选判断是否已经授权。因为在别的地方已经授权了<ul><li>已授权：直接跳过授权的过程，进行本该进行的操作</li><li>未授权：进如以下流程进行授权</li></ul></li><li>获取用户信息。<ul><li>由于用户信息是隐私为题，需要征求用户的同意。所以，把这一步放到第二步，而不是第三步。</li><li>用户同意获取用户信息：获取用户系信息</li><li>用户不同意获取用户信息：终止以下操作，返回最开始授权之前的页面</li></ul></li><li>使用微信提供的API接口wx.login()，请求微信的服务器，获取code<ul><li>成功：返回code</li><li>失败：返回错误信息</li></ul></li><li>使用获取到的<strong>用户信息+code</strong>向公司的服务器发起获取<strong>Token</strong>的  接口  请求。服务器根据传递的数据进行判断<ul><li>请求成功：返回<strong>token</strong> 和请求成功的  状态信息等</li><li>请求失败：返回失败的  错误信息  比如：code不一致等（后端程序员编写具体的接口返回内容）</li></ul></li><li>当请求成功后，进行<strong>本地存储</strong>  ，并开始授权之前的操作<ul><li>使用微信小程序提供的API接口，进行本地存储</li><li>以后再有地方需要token的地方，就会直接从本地获取Token，而无需再次进行用户授权</li></ul></li></ol><p>   注意：部分文章可能会在不就的将来更新</p><p>  如果能够帮助到你，是小编最大的荣幸</p><p>  当然   有 不好的地方  请大家帮忙指出   学习永无止境    </p><p>  小编一直认为  人外有人  天外有天    一起学习   共同进步</p><p>  让我们共同加油吧！！！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;流程图&quot;&gt;&lt;a href=&quot;#流程图&quot; class=&quot;headerlink&quot; title=&quot;流程图&quot;&gt;&lt;/a&gt;流程图&lt;/h2&gt;&lt;p&gt;在说怎么做之前，先看下这个流程图&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7
+      
+    
+    </summary>
+    
+    
+      <category term="小程序" scheme="http://www.blog.geyunjie.com/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+      <category term="小程序" scheme="http://www.blog.geyunjie.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>前端规范</title>
     <link href="http://www.blog.geyunjie.com/2018/04/15/norm/"/>
     <id>http://www.blog.geyunjie.com/2018/04/15/norm/</id>
@@ -498,33 +525,6 @@
     
     
       <category term="javascript" scheme="http://www.blog.geyunjie.com/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>微信小程序登录验证</title>
-    <link href="http://www.blog.geyunjie.com/2018/04/15/login-wx/"/>
-    <id>http://www.blog.geyunjie.com/2018/04/15/login-wx/</id>
-    <published>2018-04-15T00:54:07.000Z</published>
-    <updated>2020-02-26T15:26:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p>在说怎么做之前，先看下这个流程图</p><p><img src="./%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81%E6%B5%81%E7%A8%8B.png" alt=""></p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>看完这个流程图 ，相必大家已经很清楚了。</p><p>为了防止大家不太明白，再次给大家聊一下流程图</p><ol><li>在授权之前，应该选判断是否已经授权。因为在别的地方已经授权了<ul><li>已授权：直接跳过授权的过程，进行本该进行的操作</li><li>未授权：进如以下流程进行授权</li></ul></li><li>获取用户信息。<ul><li>由于用户信息是隐私为题，需要征求用户的同意。所以，把这一步放到第二步，而不是第三步。</li><li>用户同意获取用户信息：获取用户系信息</li><li>用户不同意获取用户信息：终止以下操作，返回最开始授权之前的页面</li></ul></li><li>使用微信提供的API接口wx.login()，请求微信的服务器，获取code<ul><li>成功：返回code</li><li>失败：返回错误信息</li></ul></li><li>使用获取到的<strong>用户信息+code</strong>向公司的服务器发起获取<strong>Token</strong>的  接口  请求。服务器根据传递的数据进行判断<ul><li>请求成功：返回<strong>token</strong> 和请求成功的  状态信息等</li><li>请求失败：返回失败的  错误信息  比如：code不一致等（后端程序员编写具体的接口返回内容）</li></ul></li><li>当请求成功后，进行<strong>本地存储</strong>  ，并开始授权之前的操作<ul><li>使用微信小程序提供的API接口，进行本地存储</li><li>以后再有地方需要token的地方，就会直接从本地获取Token，而无需再次进行用户授权</li></ul></li></ol><p>   注意：部分文章可能会在不就的将来更新</p><p>  如果能够帮助到你，是小编最大的荣幸</p><p>  当然   有 不好的地方  请大家帮忙指出   学习永无止境    </p><p>  小编一直认为  人外有人  天外有天    一起学习   共同进步</p><p>  让我们共同加油吧！！！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;流程图&quot;&gt;&lt;a href=&quot;#流程图&quot; class=&quot;headerlink&quot; title=&quot;流程图&quot;&gt;&lt;/a&gt;流程图&lt;/h2&gt;&lt;p&gt;在说怎么做之前，先看下这个流程图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7
-      
-    
-    </summary>
-    
-    
-      <category term="小程序" scheme="http://www.blog.geyunjie.com/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    
-      <category term="小程序" scheme="http://www.blog.geyunjie.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
