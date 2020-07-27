@@ -469,34 +469,6 @@
   </entry>
   
   <entry>
-    <title>好的文章 好的博客  好的语录等等</title>
-    <link href="http://www.blog.geyunjie.com/2018/09/12/classic-article/"/>
-    <id>http://www.blog.geyunjie.com/2018/09/12/classic-article/</id>
-    <published>2018-09-12T13:33:07.000Z</published>
-    <updated>2020-07-03T09:39:37.489Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote><p>本文是本人在网络上看到的好的文章，好的 博客等等一切好的东西的地址。</p><p>如有侵犯作者权益的任何行为，请及时与本人沟通，本人将及时处理。</p><p>本人做这篇收集博客的主要初衷是为了自己和小伙伴能够更好的学习复习了解掌握更多的知识。</p><p>如有带来不便，请见谅！</p></blockquote><h3 id="html篇"><a href="#html篇" class="headerlink" title="html篇"></a>html篇</h3><h3 id="css篇"><a href="#css篇" class="headerlink" title="css篇"></a>css篇</h3><h3 id="js篇"><a href="#js篇" class="headerlink" title="js篇"></a>js篇</h3><h3 id="nodejs篇"><a href="#nodejs篇" class="headerlink" title="nodejs篇"></a>nodejs篇</h3><h3 id="vue篇"><a href="#vue篇" class="headerlink" title="vue篇"></a>vue篇</h3><h4 id="1-vue-js-组件复用和扩展之道"><a href="#1-vue-js-组件复用和扩展之道" class="headerlink" title="1.vue.js 组件复用和扩展之道"></a>1.<a href="https://www.jianshu.com/p/acee66d4db3a" target="_blank" rel="noopener">vue.js 组件复用和扩展之道</a></h4><h4 id="2-你可能不知道的一些Vue实战技巧"><a href="#2-你可能不知道的一些Vue实战技巧" class="headerlink" title="2.你可能不知道的一些Vue实战技巧"></a>2.<a href="https://mp.weixin.qq.com/s?__biz=MzIyMDkwODczNw==&mid=2247487902&idx=1&sn=9ab3d1400b0452717e32300da10de774&chksm=97c58c30a0b205262c6ac60b02a670cd55d951a169cd8a2e7f6301ea83c1f7615ff0d7c528fc&scene=21#wechat_redirect" target="_blank" rel="noopener">你可能不知道的一些Vue实战技巧</a></h4><h3 id="代码整洁之道"><a href="#代码整洁之道" class="headerlink" title="代码整洁之道"></a>代码整洁之道</h3><h4 id="1-编写自文档化JavaScript的15种方法"><a href="#1-编写自文档化JavaScript的15种方法" class="headerlink" title="1.编写自文档化JavaScript的15种方法"></a>1.<a href="https://www.jianshu.com/p/1a1a7c56605f" target="_blank" rel="noopener">编写自文档化JavaScript的15种方法</a></h4><h3 id="MAC-篇"><a href="#MAC-篇" class="headerlink" title="MAC 篇"></a>MAC 篇</h3><h4 id="1、Mac-键盘快捷键"><a href="#1、Mac-键盘快捷键" class="headerlink" title="1、Mac 键盘快捷键"></a>1、<a href="https://support.apple.com/zh-cn/HT201236" target="_blank" rel="noopener">Mac 键盘快捷键</a></h4><h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><p>1.<a href="https://www.jianshu.com/p/c684b8ff14d3" target="_blank" rel="noopener">第51期 网易云音乐前端性能监控实践 &amp; 那些不常见却非常实用的css属性 &amp; 携程RN渲染性能优化实践</a></p><p>注意：部分文章可能会在不就的将来更新</p><p>如果能够帮助到你，是小编最大的荣幸</p><p>当然   有 不好的地方  请大家帮忙指出   学习永无止境    </p><p>小编一直认为  人外有人  天外有天    一起学习   共同进步</p><p>让我们共同加油吧！！！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;本文是本人在网络上看到的好的文章，好的 博客等等一切好的东西的地址。&lt;/p&gt;
-&lt;p&gt;如有侵犯作者权益的任何行为，请
-      
-    
-    </summary>
-    
-    
-      <category term="css" scheme="http://www.blog.geyunjie.com/categories/css/"/>
-    
-    
-      <category term="css" scheme="http://www.blog.geyunjie.com/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
     <title>css 中间文字 两端横线</title>
     <link href="http://www.blog.geyunjie.com/2018/09/12/css-line-text/"/>
     <id>http://www.blog.geyunjie.com/2018/09/12/css-line-text/</id>
@@ -513,6 +485,34 @@
 &lt;p&gt;本人水平有限，文章内容难免会出现问题，如果有问题欢迎指出，谢谢&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=
+      
+    
+    </summary>
+    
+    
+      <category term="css" scheme="http://www.blog.geyunjie.com/categories/css/"/>
+    
+    
+      <category term="css" scheme="http://www.blog.geyunjie.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>好的文章 好的博客  好的语录等等</title>
+    <link href="http://www.blog.geyunjie.com/2018/09/12/classic-article/"/>
+    <id>http://www.blog.geyunjie.com/2018/09/12/classic-article/</id>
+    <published>2018-09-12T13:33:07.000Z</published>
+    <updated>2020-07-03T09:39:37.489Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote><p>本文是本人在网络上看到的好的文章，好的 博客等等一切好的东西的地址。</p><p>如有侵犯作者权益的任何行为，请及时与本人沟通，本人将及时处理。</p><p>本人做这篇收集博客的主要初衷是为了自己和小伙伴能够更好的学习复习了解掌握更多的知识。</p><p>如有带来不便，请见谅！</p></blockquote><h3 id="html篇"><a href="#html篇" class="headerlink" title="html篇"></a>html篇</h3><h3 id="css篇"><a href="#css篇" class="headerlink" title="css篇"></a>css篇</h3><h3 id="js篇"><a href="#js篇" class="headerlink" title="js篇"></a>js篇</h3><h3 id="nodejs篇"><a href="#nodejs篇" class="headerlink" title="nodejs篇"></a>nodejs篇</h3><h3 id="vue篇"><a href="#vue篇" class="headerlink" title="vue篇"></a>vue篇</h3><h4 id="1-vue-js-组件复用和扩展之道"><a href="#1-vue-js-组件复用和扩展之道" class="headerlink" title="1.vue.js 组件复用和扩展之道"></a>1.<a href="https://www.jianshu.com/p/acee66d4db3a" target="_blank" rel="noopener">vue.js 组件复用和扩展之道</a></h4><h4 id="2-你可能不知道的一些Vue实战技巧"><a href="#2-你可能不知道的一些Vue实战技巧" class="headerlink" title="2.你可能不知道的一些Vue实战技巧"></a>2.<a href="https://mp.weixin.qq.com/s?__biz=MzIyMDkwODczNw==&mid=2247487902&idx=1&sn=9ab3d1400b0452717e32300da10de774&chksm=97c58c30a0b205262c6ac60b02a670cd55d951a169cd8a2e7f6301ea83c1f7615ff0d7c528fc&scene=21#wechat_redirect" target="_blank" rel="noopener">你可能不知道的一些Vue实战技巧</a></h4><h3 id="代码整洁之道"><a href="#代码整洁之道" class="headerlink" title="代码整洁之道"></a>代码整洁之道</h3><h4 id="1-编写自文档化JavaScript的15种方法"><a href="#1-编写自文档化JavaScript的15种方法" class="headerlink" title="1.编写自文档化JavaScript的15种方法"></a>1.<a href="https://www.jianshu.com/p/1a1a7c56605f" target="_blank" rel="noopener">编写自文档化JavaScript的15种方法</a></h4><h3 id="MAC-篇"><a href="#MAC-篇" class="headerlink" title="MAC 篇"></a>MAC 篇</h3><h4 id="1、Mac-键盘快捷键"><a href="#1、Mac-键盘快捷键" class="headerlink" title="1、Mac 键盘快捷键"></a>1、<a href="https://support.apple.com/zh-cn/HT201236" target="_blank" rel="noopener">Mac 键盘快捷键</a></h4><h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><p>1.<a href="https://www.jianshu.com/p/c684b8ff14d3" target="_blank" rel="noopener">第51期 网易云音乐前端性能监控实践 &amp; 那些不常见却非常实用的css属性 &amp; 携程RN渲染性能优化实践</a></p><p>注意：部分文章可能会在不就的将来更新</p><p>如果能够帮助到你，是小编最大的荣幸</p><p>当然   有 不好的地方  请大家帮忙指出   学习永无止境    </p><p>小编一直认为  人外有人  天外有天    一起学习   共同进步</p><p>让我们共同加油吧！！！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;本文是本人在网络上看到的好的文章，好的 博客等等一切好的东西的地址。&lt;/p&gt;
+&lt;p&gt;如有侵犯作者权益的任何行为，请
       
     
     </summary>
