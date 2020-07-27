@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.blog.geyunjie.com/2020/07/13/less-var/</loc>
+    
+    <lastmod>2020-07-27T02:06:59.745Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.blog.geyunjie.com/2020/07/09/nuxt-proxy/</loc>
+    
+    <lastmod>2020-07-27T02:00:48.599Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.blog.geyunjie.com/2020/07/23/life-big/</loc>
+    
+    <lastmod>2020-07-23T06:39:57.491Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.blog.geyunjie.com/2019/06/04/vant-list/</loc>
+    
+    <lastmod>2020-07-10T07:31:48.856Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.blog.geyunjie.com/2020/03/20/hexo-gitalk/</loc>
     
     <lastmod>2020-07-08T09:15:31.710Z</lastmod>
@@ -75,13 +103,6 @@
     <loc>http://www.blog.geyunjie.com/2020/06/27/Homebrew/</loc>
     
     <lastmod>2020-06-27T12:08:12.255Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.blog.geyunjie.com/2019/06/04/vant-list/</loc>
-    
-    <lastmod>2020-05-31T07:53:28.000Z</lastmod>
     
   </url>
   

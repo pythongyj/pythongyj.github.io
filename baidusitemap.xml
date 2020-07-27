@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.blog.geyunjie.com/2020/07/13/less-var/</loc>
+    <lastmod>2020-07-27</lastmod>
+  </url>  <url>
+    <loc>http://www.blog.geyunjie.com/2020/07/09/nuxt-proxy/</loc>
+    <lastmod>2020-07-27</lastmod>
+  </url>  <url>
+    <loc>http://www.blog.geyunjie.com/2020/07/23/life-big/</loc>
+    <lastmod>2020-07-23</lastmod>
+  </url>  <url>
+    <loc>http://www.blog.geyunjie.com/2019/06/04/vant-list/</loc>
+    <lastmod>2020-07-10</lastmod>
+  </url>  <url>
     <loc>http://www.blog.geyunjie.com/2020/03/20/hexo-gitalk/</loc>
     <lastmod>2020-07-08</lastmod>
   </url>  <url>
@@ -33,9 +45,6 @@
   </url>  <url>
     <loc>http://www.blog.geyunjie.com/2020/06/27/Homebrew/</loc>
     <lastmod>2020-06-27</lastmod>
-  </url>  <url>
-    <loc>http://www.blog.geyunjie.com/2019/06/04/vant-list/</loc>
-    <lastmod>2020-05-31</lastmod>
   </url>  <url>
     <loc>http://www.blog.geyunjie.com/2019/05/24/vue-router-parms/</loc>
     <lastmod>2020-05-31</lastmod>
