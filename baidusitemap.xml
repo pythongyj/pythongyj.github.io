@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.blog.geyunjie.com/2018/09/16/css-attr-practical/</loc>
+    <lastmod>2020-08-31</lastmod>
+  </url>  <url>
+    <loc>http://www.blog.geyunjie.com/2019/03/06/css-margin-negative/</loc>
+    <lastmod>2020-08-07</lastmod>
+  </url>  <url>
     <loc>http://www.blog.geyunjie.com/2020/08/06/target-2020/</loc>
     <lastmod>2020-08-06</lastmod>
   </url>  <url>
@@ -47,9 +53,6 @@
     <lastmod>2020-07-07</lastmod>
   </url>  <url>
     <loc>http://www.blog.geyunjie.com/2018/09/12/classic-article/</loc>
-    <lastmod>2020-07-03</lastmod>
-  </url>  <url>
-    <loc>http://www.blog.geyunjie.com/2018/09/16/css-attr-practical/</loc>
     <lastmod>2020-07-03</lastmod>
   </url>  <url>
     <loc>http://www.blog.geyunjie.com/2018/03/21/js-set-html-font-size/</loc>
